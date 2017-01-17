@@ -58,3 +58,45 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.tweet-list {
+  list-style-type: none;
+  margin: 16px 0;
+}
+
+.tweet-list p {
+  margin: 2px 0;
+}
+
+.tweet-list:before {
+  content: " ";
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  position: absolute;
+  /*right: 10px;*/
+  left: -30px;
+  /*z-index: -100;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

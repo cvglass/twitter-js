@@ -2,7 +2,7 @@
 const routes = require('./routes/');
 const express = require('express');
 const app = express();
-
+const bodyParser = require('body-parser');
 
 // set templating engine
 const nunjucks = require('nunjucks');
@@ -11,10 +11,17 @@ app.engine('html', nunjucks.render); //instead of default res.render - use nunju
 nunjucks.configure('views', {noCache: true});
 
 
+
+app.use(express.static('public'));
+
 // start app - listen on port
 app.listen(3000, ()=>{
 	console.log('server listening')
 });
+
+app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+
 
 // handlers
 app.use((req, res, next)=>{
@@ -24,6 +31,8 @@ app.use((req, res, next)=>{
 
 // route home
 app.use('/', routes);
+
+
 
 // app.get('/', (req, res) =>{
 // 	res.render('index', {title : "An example", people : people})

@@ -33,6 +33,8 @@ for (let i = 0; i < 10; i++) {
   add( getFakeName(), getFakeTweet() );
 }
 
+add("Don", 'I\'m a developer!');
+
 module.exports = { add: add, list: list, find: find };
 
 
